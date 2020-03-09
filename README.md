@@ -6,7 +6,7 @@ Terraform module which creates Vault AppRole
 
 ```hcl
 module "approle" {
-  source = "git@github.com:makezbs/terraform-vault-approle.git"
+  source = "github.com/makezbs/terraform-vault-approle.git"
 
   role_name   = "mySuperApp"
   policy_name = "mySuperApp"
