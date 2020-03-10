@@ -28,6 +28,7 @@ module "approle" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:-----:|
+| enable\_login | Enable login feature | `bool` | `false` | no |
 | policy | Vault policy | `string` | n/a | yes |
 | policy\_name | Name for Vault policy | `string` | n/a | yes |
 | role\_name | Name for AppRole | `string` | n/a | yes |
