@@ -18,6 +18,38 @@ module "approle" {
 }
 ```
 
+## Import current approle
+
+```sh
+terraform import module.approle.vault_approle_auth_backend_role.this auth/approle/role/mySuperApp
+terraform import module.approle.vault_policy.this mySuperApp
+terraform show
+# Copy your policies in current module
+terraform plan -out tfplan
+
+      ~ policies                = [
+          - "mySuperApp",
+        ]
+
+      ~ token_policies          = [
+          + "mySuperApp",
+        ]
+
+  + resource "vault_approle_auth_backend_role_secret_id" "this" {
+      + accessor          = (known after apply)
+      + backend           = "approle"
+      + id                = (known after apply)
+      + role_name         = "mySuperApp"
+      + secret_id         = (sensitive value)
+      + wrapping_accessor = (known after apply)
+      + wrapping_token    = (sensitive value)
+    }
+
+# vault_approle_auth_backend_role_secret_id will be added anyway because
+# resource vault_approle_auth_backend_role_secret_id doesn't support import
+terraform apply tfplan
+```
+
 ## Providers
 
 | Name | Version |
