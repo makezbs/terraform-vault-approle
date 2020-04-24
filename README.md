@@ -50,6 +50,13 @@ terraform plan -out tfplan
 terraform apply tfplan
 ```
 
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | ~> 0.12.20 |
+| vault | ~> 2.8 |
+
 ## Providers
 
 | Name | Version |
@@ -59,7 +66,8 @@ terraform apply tfplan
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:-----:|
+|------|-------------|------|---------|:--------:|
+| create\_secret\_id | Create secret\_id | `bool` | `false` | no |
 | enable\_login | Enable login feature | `bool` | `false` | no |
 | policy | Vault policy | `string` | n/a | yes |
 | policy\_name | Name for Vault policy | `string` | n/a | yes |

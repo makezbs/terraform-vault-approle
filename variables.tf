@@ -54,3 +54,9 @@ variable "enable_login" {
   description = "Enable login feature"
   default     = false
 }
+
+variable "create_secret_id" {
+  type        = bool
+  description = "Create secret_id"
+  default     = false
+}
