@@ -5,7 +5,7 @@ output "role_id" {
 
 output "secret_id" {
   description = "The secret ID of created approle"
-  value       = vault_approle_auth_backend_role_secret_id.this.secret_id
+  value       = vault_approle_auth_backend_role_secret_id.this.*.secret_id[0]
 }
 
 output "policy_id" {
